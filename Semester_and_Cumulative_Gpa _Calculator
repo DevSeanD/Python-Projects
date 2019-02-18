@@ -76,28 +76,31 @@ if user_sel == 1:
                         grade_points += class_grade * cred_worth
                         if counter > num_classes:
                             sem_gpa = grade_points / total_cred
+                            print("========================================")
                             print("Your Semester Gpa is:", sem_gpa)
+                            print("========================================")
 
 if user_sel == 2:
-    total_sem = 0.0
-    sem_gpa = 0.0
-    total_sem_gpa = 0.0
-    counter = 1
+    total_sem = 0.0         # total semesters
+    sem_gpa = 0.0           # semester gpa
+    total_sem_gpa = 0.0     # total of all semesters gpa
+    counter = 1             # counter for display
 
     print("=====================")
     print("Cumulative Calculator")
     print("=====================")
 
-    while(total_sem <= 0) and (total_sem <= 15):
+    while(total_sem <=0) and (total_sem <= 15):        # must enter between 1-15 total semesters
         total_sem = float(input("How many semesters have you taken?"))
-        print(" ")
     while total_sem >= counter:
         print("What was your gpa for semester", counter)
         print(" ")
         sem_gpa = float(input())
-        if (sem_gpa <= 4.0) and (sem_gpa >= 0.0):
+        if (sem_gpa <= 4.0) and (sem_gpa >= 0.0):       # grade must be beween 0.0 and 4.0
             counter += 1
-            total_sem_gpa += sem_gpa
-        if counter > total_sem:
-            cum_gpa = total_sem_gpa / total_sem
+            total_sem_gpa += sem_gpa                    # adds semester gpa to the gpa total
+        if counter > total_sem:                         # if the counter is more than total semesters then calcukate
+            cum_gpa = total_sem_gpa / total_sem         # cumulative gpa = total grade points / number of semesters
+            print("==========================================")
             print("Your Cumulative Gpa is :", cum_gpa)
+            print("==========================================")

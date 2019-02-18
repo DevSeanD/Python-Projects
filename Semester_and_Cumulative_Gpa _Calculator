@@ -96,7 +96,7 @@ if user_sel == 2:
         print("What was your gpa for semester", counter)
         print(" ")
         sem_gpa = float(input())
-        if (sem_gpa <= 4.0) and (sem_gpa >= 0.0):       # grade must be beween 0.0 and 4.0
+        if (sem_gpa <= 4.0) and (sem_gpa >= 0.0):       # grade must be between 0.0 and 4.0
             counter += 1
             total_sem_gpa += sem_gpa                    # adds semester gpa to the gpa total
         if counter > total_sem:                         # if the counter is more than total semesters then calcukate

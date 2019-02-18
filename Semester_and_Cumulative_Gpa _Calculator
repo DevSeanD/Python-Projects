@@ -1,6 +1,18 @@
 print("Hello, this program is designed to calculate semester gpa and cumulative gpa")
 print("")
 
+
+def gpa_calculation(x, y):
+    """
+    !This module is designed to calculate gpa with the given parameters x and y!
+    :param x: grade points and total gpa points
+    :param y: total credits and total semesters
+    :return:
+
+    """
+    return x / y
+
+
 user_sel = 0   # user selection
 
 while (user_sel != 1) and (user_sel != 2):
@@ -75,9 +87,8 @@ if user_sel == 1:
                             class_grade = 0.0
                         grade_points += class_grade * cred_worth
                         if counter > num_classes:
-                            sem_gpa = grade_points / total_cred
                             print("========================================")
-                            print("Your Semester Gpa is:", sem_gpa)
+                            print("Your Semester Gpa is:", gpa_calculation(grade_points, total_cred))
                             print("========================================")
 
 if user_sel == 2:
@@ -92,15 +103,14 @@ if user_sel == 2:
 
     while(total_sem <=0) and (total_sem <= 15):        # must enter between 1-15 total semesters
         total_sem = float(input("How many semesters have you taken?"))
+        print(" ")
     while total_sem >= counter:
         print("What was your gpa for semester", counter)
-        print(" ")
         sem_gpa = float(input())
         if (sem_gpa <= 4.0) and (sem_gpa >= 0.0):       # grade must be between 0.0 and 4.0
             counter += 1
             total_sem_gpa += sem_gpa                    # adds semester gpa to the gpa total
-        if counter > total_sem:                         # if the counter is more than total semesters then calcukate
-            cum_gpa = total_sem_gpa / total_sem         # cumulative gpa = total grade points / number of semesters
+        if counter > total_sem:                         # if the counter is more than total semesters then calculate
             print("==========================================")
-            print("Your Cumulative Gpa is :", cum_gpa)
+            print("Your Cumulative Gpa is :", gpa_calculation(total_sem_gpa, total_sem))
             print("==========================================")

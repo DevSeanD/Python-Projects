@@ -1,8 +1,6 @@
 """
 Hello, this application is designed to calculate semester and cumulative gpa. 
-
 Created by: DevSeanD
-
 """
 
 
@@ -16,7 +14,6 @@ def gpa_calculation(x, y):
     :param x: grade points and total gpa points
     :param y: total credits and total semesters
     :return:
-
     """
     return x / y
 
@@ -43,14 +40,14 @@ if user_sel == 1:
     print("Semester Calculator")
     print("===================")
 
-    while (num_classes <= 1) and (num_classes <= 10):
+    while (num_classes <= 0) and (num_classes <= 11):                 # num_classes must be between 1-10
         num_classes = float(input("How want classes are you taking this semester"))
         print(" ")
 
         while counter <= num_classes:
                 print("how many credits is class", counter, "worth")
                 cred_worth = float(input())
-                if (cred_worth >= 1) and (cred_worth < 6):
+                if (cred_worth >= 1) and (cred_worth <= 6):           # credit worth must be between 1-6
                     counter += 1
                     total_cred += cred_worth
                     print("To enter a letter type the letter to the right of the letter")
@@ -66,7 +63,7 @@ if user_sel == 1:
                     print("|          F (13)           |")
                     print("+---------------------------+")
                     class_grade = float(input())
-                    if (class_grade >= 1) and (class_grade <= 13):
+                    if (class_grade >= 1) and (class_grade <= 13):    # the value must be from the menu
                         if class_grade == 1:  # Assigning menu value to gpa
                             class_grade = 4.3
                         if class_grade == 2:
@@ -96,7 +93,7 @@ if user_sel == 1:
                         grade_points += class_grade * cred_worth
                         if counter > num_classes:
                             print("========================================")
-                            print("Your Semester Gpa is:", gpa_calculation(grade_points, total_cred))
+                            print("Your Semester Gpa is:", gpa_calculation(grade_points, total_cred))  # call function
                             print("========================================")
 
 if user_sel == 2:
@@ -109,7 +106,7 @@ if user_sel == 2:
     print("Cumulative Calculator")
     print("=====================")
 
-    while(total_sem <=0) and (total_sem <= 15):        # must enter between 1-15 total semesters
+    while(total_sem <=0) and (total_sem <= 15):         # must enter between 1-15 total semesters
         total_sem = float(input("How many semesters have you taken?"))
         print(" ")
     while total_sem >= counter:
@@ -120,5 +117,5 @@ if user_sel == 2:
             total_sem_gpa += sem_gpa                    # adds semester gpa to the gpa total
         if counter > total_sem:                         # if the counter is more than total semesters then calculate
             print("==========================================")
-            print("Your Cumulative Gpa is :", gpa_calculation(total_sem_gpa, total_sem))
-            print("==========================================")
+            print("Your Cumulative Gpa is :", gpa_calculation(total_sem_gpa, total_sem))  # call function
+print("==========================================")

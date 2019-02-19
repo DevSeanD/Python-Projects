@@ -1,3 +1,11 @@
+"""
+Hello, this program is a simple to do list. It works by allowing the user to input items and hit enter to create a new line
+indefinitley 
+
+Created by: DevSeanD
+
+"""
+
 print("Hello this application is designed to keep a To-Do list")
 print(" it will allow you to continually add new items just press enter")
 print("  * To quit enter \" :wq \" * ")

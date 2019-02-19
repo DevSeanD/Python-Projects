@@ -1,3 +1,11 @@
+"""
+Hello, this application is designed to calculate semester and cumulative gpa. 
+
+Created by: DevSeanD
+
+"""
+
+
 print("Hello, this program is designed to calculate semester gpa and cumulative gpa")
 print("")
 

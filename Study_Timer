@@ -6,11 +6,11 @@ import time
 import random
 
 
-num_hour = int(input("how many hours would you like to study for? if none enter 0"))
+num_hour = int(input("How many hours would you like to study for? if none enter 0  "))
 num_hour = num_hour * 3600  # Converts hours to seconds
 print("")
 
-num_min = int(input("How many minutes would you like to study for?"))
+num_min = int(input("How many minutes would you like to study for?  "))
 num_min = num_min * 60      # Convert seconds input to minutes
 
 total_sec = num_min + num_hour
@@ -19,10 +19,13 @@ total_sec = num_min + num_hour
 print("")
 print("")
 print("")
+print("")
+print("")
+print("")
 
 
 for y in range(1):  # generates one random number
-    quote = (random.randint(1, 3))
+    quote = (random.randint(1, 4))
 
 
 # prints out a motivation quote dependant upon random generated number
@@ -35,6 +38,12 @@ if quote == 2:
 if quote == 3:
     print("It always seems impossible until its done - Nelson Mandela")
 
+if quote == 4:
+    print("Life is 10% what happens to you and 90% how you react to it -  Charles R. Swindoll")
+
+if quote == 5:
+    print("You cannot cross the sea by merely by standing a staring at the water - Rabindranath Tagore")
+
 
 def procedure():
 
@@ -43,4 +52,4 @@ def procedure():
 
 t0 = time.time()
 procedure()
-print("You have finished your study session of", int(total_sec / 60), "minutes")  # displays in minutes 
+print("You have finished your study session of", int(total_sec / 60), "minutes")  # displays in minutes

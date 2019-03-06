@@ -35,26 +35,36 @@ def study_timer():              # does time conversions
 
 for y in range(1):          # generates one random number
     quote = (random.randint(1, 4))
-    
+
     if quote == 1:
+        label_space = tk.Label(text=" ")
+        label_space.grid(column=0,row=5)
         label_quote1 = tk.Label(text="  Never, never, never give up                                          ")
-        label_quote1.grid(column=0, row=5)
+        label_quote1.grid(column=0, row=6)
 
     if quote == 2:
+        label_space = tk.Label(text=" ")
+        label_space.grid(column=0, row=5)
         label_quote2 = tk.Label(text="  Quality is not an act, it is a habit                                 ")
-        label_quote2.grid(column=0, row=5)
+        label_quote2.grid(column=0, row=6)
 
     if quote == 3:
+        label_space = tk.Label(text=" ")
+        label_space.grid(column=0, row=5)
         label_quote2 = tk.Label(text="  It always seems impossible until its done                            ")
-        label_quote2.grid(column=0, row=5)
+        label_quote2.grid(column=0, row=6)
 
     if quote == 4:
+        label_space = tk.Label(text=" ")
+        label_space.grid(column=0, row=5)
         label_quote2 = tk.Label(text="  Life is 10% what happens to you and 90% how you react to it")
-        label_quote2.grid(column=0, row=5)
+        label_quote2.grid(column=0, row=6)
 
     if quote == 5:
+        label_space = tk.Label(text=" ")
+        label_space.grid(column=0, row=5)
         label_quote2 = tk.Label(text="  You cannot cross the sea by merely staring at the water")
-        label_quote2.grid(column=0, row=5)
+        label_quote2.grid(column=0, row=6)
 
 
 def display_timer():            # displays the ending message
@@ -62,15 +72,17 @@ def display_timer():            # displays the ending message
     time.sleep(study_timer())
     display_min = float(study_timer() / 60)
 
+    label_space = tk.Label(text=" ")
+    label_space.grid(column=0, row=7)
     label_fin = tk.Label(text="You have finished your study session of")
-    label_fin.grid(column=0, row=6)
+    label_fin.grid(column=0, row=8)
 
     display_fin = tk.Text(master=window, height=1, width=5)
-    display_fin.grid(column=0, row=7)
+    display_fin.grid(column=0, row=9)
     display_fin.insert(tk.END, display_min)
 
     label_time = tk.Label(text="minuets")
-    label_time.grid(column=0, row=8)
+    label_time.grid(column=0, row=10)
 
 
 # LABEL

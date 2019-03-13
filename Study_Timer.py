@@ -8,12 +8,13 @@ import tkinter as tk
 import time
 import random
 from tkinter import ttk
+from tkinter import *
 
 window = tk.Tk()
 
 window.title("Study Timer")
 
-window.geometry("450x450")
+window.geometry("300x300")
 
 
 # Functions
@@ -35,27 +36,29 @@ def study_timer():  # does time conversions
 for y in range(1):  # generates one random number
     quote = (random.randint(1, 5))  # generates a random number between 1 and 5
 
-    label_space = tk.Label(text=" ")
-
     if quote == 1:
-        label_quote1 = tk.Label(text="  \"Never, never, never give up\"                                        ")
-        label_quote1.grid(column=0, row=6)
+        label_quote1 = tk.Label(text="\"Never, never, never give up\"", bd=1, anchor=CENTER)
+        label_quote1 .grid(column=0, row=0)
+
 
     if quote == 2:
-        label_quote2 = tk.Label(text="  \"Quality is not an act, it is a habit\"                                ")
-        label_quote2.grid(column=0, row=6)
+        label_quote2 = tk.Label(text="  \"Quality is not an act, it is a habit\"", bd=1, anchor=CENTER)
+        label_quote2.grid(column=0, row=0)
+
 
     if quote == 3:
-        label_quote2 = tk.Label(text="  \"It always seems impossible until its done\"                            ")
-        label_quote2.grid(column=0, row=6)
+        label_quote2 = tk.Label(text="  \"It always seems impossible until its done\"", bd=1, anchor=CENTER)
+        label_quote2.grid(column=0, row=0)
 
     if quote == 4:
-        label_quote2 = tk.Label(text="  \"Life is 10% what happens to you and 90% how you react to it\"")
-        label_quote2.grid(column=0, row=6)
+        label_quote2 = tk.Label(text="  \"Life is 10% what happens to you and 90% how you react to it\"", bd=1, anchor=CENTER)
+        label_quote2.grid(column=0, row=0)
+        window.geometry("450x300")      # higher rez because of longer text
 
     if quote == 5:
-        label_quote2 = tk.Label(text="  \"You cannot cross the sea by merely staring at the water\"")
-        label_quote2.grid(column=0, row=6)
+        label_quote2 = tk.Label(text="  \"You cannot cross the sea by merely staring at the water\"", bd=1, anchor=CENTER)
+        label_quote2.grid(column=0, row=0)
+        window.geometry("420x300")      # higher rez because of longer text
 
 
 def display_timer():  # displays the ending message
@@ -63,22 +66,18 @@ def display_timer():  # displays the ending message
     time.sleep(study_timer())
     display_min = float(study_timer() / 60)
 
-    label_space.grid(column=0, row=7)
     label_fin = tk.Label(text="You have finished your study session of")
-    label_fin.grid(column=0, row=8)
+    label_fin.grid(column=0, row=6)
 
     display_fin = tk.Text(master=window, height=1, width=5)
-    display_fin.grid(column=0, row=9)
+    display_fin.grid(column=0, row=7)
     display_fin.insert(tk.END, display_min)
 
     label_time = tk.Label(text="minuets")
-    label_time.grid(column=0, row=10)
+    label_time.grid(column=0, row=8)
 
 
 # LABEL
-title = tk.Label(text=" ")
-title.grid(column=0, row=0)
-
 label_hour = tk.Label(text="How many hours?")
 label_hour.grid(column=0, row=1)
 

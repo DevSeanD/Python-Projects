@@ -19,7 +19,6 @@ window.geometry("300x300")
 
 # Functions
 
-
 def study_timer():  # does time conversions
 
     num_hour = float(entry_field1.get())
@@ -40,11 +39,9 @@ for y in range(1):  # generates one random number
         label_quote1 = tk.Label(text="\"Never, never, never give up\"", bd=1, anchor=CENTER)
         label_quote1 .grid(column=0, row=0)
 
-
     if quote == 2:
         label_quote2 = tk.Label(text="  \"Quality is not an act, it is a habit\"", bd=1, anchor=CENTER)
         label_quote2.grid(column=0, row=0)
-
 
     if quote == 3:
         label_quote2 = tk.Label(text="  \"It always seems impossible until its done\"", bd=1, anchor=CENTER)
@@ -67,14 +64,14 @@ def display_timer():  # displays the ending message
     display_min = float(study_timer() / 60)
 
     label_fin = tk.Label(text="You have finished your study session of")
-    label_fin.grid(column=0, row=6)
+    label_fin.grid(column=0, row=8)
 
     display_fin = tk.Text(master=window, height=1, width=5)
-    display_fin.grid(column=0, row=7)
+    display_fin.grid(column=0, row=9)
     display_fin.insert(tk.END, display_min)
 
     label_time = tk.Label(text="minuets")
-    label_time.grid(column=0, row=8)
+    label_time.grid(column=0, row=10)
 
 
 # LABEL
@@ -85,8 +82,11 @@ label_min = tk.Label(text="How many minuets?")
 label_min.grid(column=0, row=3)
 
 # BUTTON
-button1 = ttk.Button(text="Start", command=display_timer)
+button1 = ttk.Button(text="Start Timer", command=display_timer)
 button1.grid(column=0, row=5)
+
+label_blank = tk.Label(text="  ")
+label_blank.grid(column=0, row=6)
 
 # Entry Field
 entry_field1 = ttk.Entry()

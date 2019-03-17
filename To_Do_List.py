@@ -21,6 +21,8 @@ def to_do():
         if counter != 0:
             to_do_item = ttk.Entry(width=65)
             to_do_item.place(x=30, y=110 + y_shift)
+            check_box = IntVar()
+            Checkbutton(text="Done", variable=check_box).place(x=20, y=110 + y_shift)   # places check boxes in front of the entry fields
             counter += 1
             y_shift += 35
 

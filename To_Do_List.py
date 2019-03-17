@@ -12,19 +12,22 @@ from tkinter import *
 
 
 def to_do():
-    item_number = item_number_entry.get()
+    item_number = item_number_entry.get() # user supplied number of items
     item_number = int(item_number)
     counter = 1
-    y_shift = 0
+    y_shift = 0  # used in order to shift the entry boxes down
 
-    while True:
+    while True:     # this loop will only continue when the counter is less than item_number
         if counter != 0:
             to_do_item = ttk.Entry(width=65)
             to_do_item.place(x=30, y=110 + y_shift)
             counter += 1
-            y_shift += 50
+            y_shift += 35
 
-        if counter > item_number:
+        if counter >= 18:   # adjust the resolution if the number of list items is 18 or greater
+            window.geometry("600x1000")
+
+        if counter > item_number:   # when the counter is more than the number of items break the while statement
             break
 
 
@@ -32,7 +35,7 @@ window = tk.Tk()
 
 window.title("To Do List")
 
-window.geometry("600x1000")
+window.geometry("600x600")
 
 # Label
 welcome_label = Label(text="Hello, welcome to a simple To-Do list app")

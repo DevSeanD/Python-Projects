@@ -18,6 +18,11 @@ def to_do():
     y_shift = 0  # used in order to shift the entry boxes down
 
     while True:     # this loop will only continue when the counter is less than item_number
+        if item_number > 18:   # if item_number is greater then the loop will be broken
+            input_error_label = Label(text="Please enter any number up to 18")
+            input_error_label.place(x=30, y=110)
+            break
+
         if counter != 0:
             to_do_item = ttk.Entry(width=65)
             to_do_item.place(x=30, y=110 + y_shift)
@@ -26,7 +31,7 @@ def to_do():
             counter += 1
             y_shift += 35
 
-        if counter >= 18:   # adjust the resolution if the number of list items is 18 or greater
+        if counter > 16:   # adjust the resolution if the number of list items is greater than 15
             window.geometry("600x1000")
 
         if counter > item_number:   # when the counter is more than the number of items break the while statement

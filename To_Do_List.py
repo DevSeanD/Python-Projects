@@ -12,7 +12,7 @@ from tkinter import *
 
 
 def to_do():
-    item_number = item_number_entry.get() # user supplied number of items
+    item_number = item_number_entry.get()   # user supplied number of items
     item_number = int(item_number)
     counter = 1
     y_shift = 0  # used in order to shift the entry boxes down
@@ -24,10 +24,10 @@ def to_do():
             break
 
         if counter != 0:
+            check_box = IntVar()
+            Checkbutton(variable=check_box).place(x=10, y=110 + y_shift)  # places check boxes in front of the entry fields
             to_do_item = ttk.Entry(width=65)
             to_do_item.place(x=30, y=110 + y_shift)
-            check_box = IntVar()
-            Checkbutton(text="Done", variable=check_box).place(x=20, y=110 + y_shift)   # places check boxes in front of the entry fields
             counter += 1
             y_shift += 35
 

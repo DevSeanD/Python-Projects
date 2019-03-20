@@ -14,7 +14,7 @@ window = tk.Tk()
 
 window.title("Study Timer")
 
-window.geometry("300x300")
+window.geometry("265x300")
 
 
 # Functions
@@ -33,7 +33,7 @@ def study_timer():  # does time conversions
 
 
 for y in range(1):  # generates one random number
-    quote = (random.randint(1, 5))  # generates a random number between 1 and 5
+    quote = (random.randint(1, 9))  # generates a random number between 1 and 5
 
     if quote == 1:
         label_quote1 = tk.Label(text="\"Never, never, never give up\"", bd=1, anchor=CENTER)
@@ -46,6 +46,7 @@ for y in range(1):  # generates one random number
     if quote == 3:
         label_quote2 = tk.Label(text="  \"It always seems impossible until its done\"", bd=1, anchor=CENTER)
         label_quote2.grid(column=0, row=0)
+        window.geometry("300x300")  # higher rez because of longer text
 
     if quote == 4:
         label_quote2 = tk.Label(text="  \"Life is 10% what happens to you and 90% how you react to it\"", bd=1, anchor=CENTER)
@@ -55,7 +56,26 @@ for y in range(1):  # generates one random number
     if quote == 5:
         label_quote2 = tk.Label(text="  \"You cannot cross the sea by merely staring at the water\"", bd=1, anchor=CENTER)
         label_quote2.grid(column=0, row=0)
-        window.geometry("420x300")      # higher rez because of longer text
+        window.geometry("420x300") # higher rez because of longer text
+
+    if quote == 6:
+        label_quote2 = tk.Label(text="  \"Even if you fall on your face, you are moving forward\"", bd=1, anchor=CENTER)
+        label_quote2.grid(column=0, row=0)
+        window.geometry("450x300")      # higher rez because of longer text
+
+    if quote == 7:
+        label_quote2 = tk.Label(text="  \"To be a good loser is to learn how to win\"", bd=1, anchor=CENTER)
+        label_quote2.grid(column=0, row=0)
+        window.geometry("300x300")  # higher rez because of longer text
+
+    if quote == 8:
+        label_quote2 = tk.Label(text="  \"Always do your best. What you plant now, you will harvest later\"", bd=1, anchor=CENTER)
+        label_quote2.grid(column=0, row=0)
+        window.geometry("450x300")      # higher rez because of longer text
+
+    if quote == 9:
+        label_quote2 = tk.Label(text="  \"Every day brings new choices\"", bd=1, anchor=CENTER)
+        label_quote2.grid(column=0, row=0)
 
 
 def display_timer():  # displays the ending message

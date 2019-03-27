@@ -1,7 +1,7 @@
 """
-Hello, this application is a simplistic to do list made using tkinter
-Create by: DevSeanD
-
+Hello this application is designed as a study timer app to aid the user when studying by keeping them motivated
+This application uses tkinter as its GUI interface
+Created by: DevSeanD
 """
 
 import tkinter as tk
@@ -9,57 +9,108 @@ import time
 import random
 from tkinter import ttk
 from tkinter import *
-
-
-def to_do():
-    item_number = item_number_entry.get()   # user supplied number of items
-    item_number = int(item_number)
-    counter = 1
-    y_shift = 0  # used in order to shift the entry boxes down
-
-    while True:     # this loop will only continue when the counter is less than item_number
-        if item_number > 18:   # if item_number is greater then the loop will be broken
-            input_error_label = Label(text="Please enter any number up to 18")
-            input_error_label.place(x=30, y=110)
-            break
-
-        if counter != 0:
-            check_box = IntVar()
-            Checkbutton(variable=check_box).place(x=10, y=110 + y_shift)  # places check boxes in front of the entry fields
-            to_do_item = ttk.Entry(width=65)
-            to_do_item.place(x=30, y=110 + y_shift)
-            counter += 1
-            y_shift += 35
-
-        if counter > 16:   # adjust the resolution if the number of list items is greater than 15
-            window.geometry("600x1000")
-
-        if counter > item_number:   # when the counter is more than the number of items break the while statement
-            break
-
+from tkinter import messagebox
 
 window = tk.Tk()
 
-window.title("To Do List")
+window.title("Study Timer")
 
-window.geometry("600x600")
+window.geometry("220x250")
 
-# Label
-welcome_label = Label(text="Hello, welcome to a simple To-Do list app")
-welcome_label.place(x=150, y=10)
 
-item_number_label = Label(text="How many items would you like?")
-item_number_label.place(x=30, y=30)
+# Functions
 
-#   Entry
-item_number_entry = tk.Entry()
-item_number_entry.place(x=30, y=50)
+def study_timer():  # does time conversions
 
-#   Button
-item_number_button = tk.Button(text="Enter", font=("arial", 10), command=to_do)
-item_number_button.place(x=30, y=75)
-y_shift = 0
-counter = 0
+    num_hour = float(entry_field1.get())
+    num_hour = num_hour * 3600  # converts hours to seconds
 
+    num_min = float(entry_field2.get())
+    num_min = num_min * 60  # converts minuets to seconds
+
+    total_sec = num_min + num_hour
+
+    return total_sec  # prints out a motivation quote dependant upon random generated number
+
+
+for y in range(1):  # generates one random number
+    quote = (random.randint(1, 9))  # generates a random number between 1 and 5
+
+    if quote == 1:
+        label_quote1 = tk.Label(text="\"Never, never, never give up\"", bd=1, anchor=CENTER)
+        label_quote1 .grid(column=0, row=0)
+
+    if quote == 2:
+        label_quote2 = tk.Label(text="  \"Quality is not an act, it is a habit\"", bd=1, anchor=CENTER)
+        label_quote2.grid(column=0, row=0)
+
+    if quote == 3:
+        label_quote2 = tk.Label(text="  \"It always seems impossible until its done\"", bd=1, anchor=CENTER)
+        label_quote2.grid(column=0, row=0)
+        window.geometry("300x250")  # higher rez because of longer text
+
+    if quote == 4:
+        label_quote2 = tk.Label(text="  \"Life is 10% what happens to you and 90% how you react to it\"", bd=1, anchor=CENTER)
+        label_quote2.grid(column=0, row=0)
+        window.geometry("450x250")      # higher rez because of longer text
+
+    if quote == 5:
+        label_quote2 = tk.Label(text="  \"You cannot cross the sea by merely staring at the water\"", bd=1, anchor=CENTER)
+        label_quote2.grid(column=0, row=0)
+        window.geometry("420x250") # higher rez because of longer text
+
+    if quote == 6:
+        label_quote2 = tk.Label(text="  \"Even if you fall on your face, you are moving forward\"", bd=1, anchor=CENTER)
+        label_quote2.grid(column=0, row=0)
+        window.geometry("450x250")      # higher rez because of longer text
+
+    if quote == 7:
+        label_quote2 = tk.Label(text="  \"To be a good loser is to learn how to win\"", bd=1, anchor=CENTER)
+        label_quote2.grid(column=0, row=0)
+        window.geometry("300x250")  # higher rez because of longer text
+
+    if quote == 8:
+        label_quote2 = tk.Label(text="  \"Always do your best. What you plant now, you will harvest later\"", bd=1, anchor=CENTER)
+        label_quote2.grid(column=0, row=0)
+        window.geometry("450x250")      # higher rez because of longer text
+
+    if quote == 9:
+        label_quote2 = tk.Label(text="  \"Every day brings new choices\"", bd=1, anchor=CENTER)
+        label_quote2.grid(column=0, row=0)
+
+
+def display_timer():  # displays the ending message
+
+    time.sleep(study_timer())
+    display_min = float(study_timer() / 60)
+
+    message = "You have finished your study session of "
+    message_mins = " minuets"
+    display_min = str(display_min)
+    full_message = message + display_min + message_mins
+
+    messagebox.showinfo("Finished Session", full_message)
+
+
+# LABEL
+label_hour = tk.Label(text="How many hours?")
+label_hour.grid(column=0, row=1)
+
+label_min = tk.Label(text="How many minuets?")
+label_min.grid(column=0, row=3)
+
+# BUTTON
+button1 = ttk.Button(text="Start Timer", command=display_timer)
+button1.grid(column=0, row=5)
+
+label_blank = tk.Label(text="  ")
+label_blank.grid(column=0, row=6)
+
+# Entry Field
+entry_field1 = ttk.Entry()
+entry_field1.grid(column=0, row=2)
+
+entry_field2 = ttk.Entry()
+entry_field2.grid(column=0, row=4)
 
 window.mainloop()

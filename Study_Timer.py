@@ -9,6 +9,7 @@ import time
 import random
 from tkinter import ttk
 from tkinter import *
+from tkinter import messagebox
 
 window = tk.Tk()
 
@@ -83,15 +84,12 @@ def display_timer():  # displays the ending message
     time.sleep(study_timer())
     display_min = float(study_timer() / 60)
 
-    label_fin = tk.Label(text="You have finished your study session of")
-    label_fin.grid(column=0, row=8)
+    begin_alert = "You have finished your study session of "
+    end_alert = " minuets!"
+    display_min = str(display_min)
+    whole_alert = begin_alert + display_min + end_alert
 
-    display_fin = tk.Text(master=window, height=1, width=5)
-    display_fin.grid(column=0, row=9)
-    display_fin.insert(tk.END, display_min)
-
-    label_time = tk.Label(text="minuets")
-    label_time.grid(column=0, row=10)
+    messagebox.showinfo("Finished Session", whole_alert)
 
 
 # LABEL

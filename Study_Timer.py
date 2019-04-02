@@ -78,6 +78,9 @@ for y in range(1):  # generates one random number
         label_quote2 = tk.Label(text="  \"Every day brings new choices\"", bd=1, anchor=CENTER)
         label_quote2.grid(column=0, row=0)
 
+    label_blank = tk.Label(text=" ")
+    label_blank.grid(column=0, row=1)
+
 
 def display_timer():  # displays the ending message
 
@@ -94,23 +97,23 @@ def display_timer():  # displays the ending message
 
 # LABEL
 label_hour = tk.Label(text="How many hours?")
-label_hour.grid(column=0, row=1)
+label_hour.grid(column=0, row=2)
 
 label_min = tk.Label(text="How many minuets?")
-label_min.grid(column=0, row=3)
+label_min.grid(column=0, row=4)
 
 # BUTTON
 button1 = ttk.Button(text="Start Timer", command=display_timer)
-button1.grid(column=0, row=5)
+button1.grid(column=0, row=6)
 
 label_blank = tk.Label(text="  ")
-label_blank.grid(column=0, row=6)
+label_blank.grid(column=0, row=7)
 
 # Entry Field
 entry_field1 = ttk.Entry()
-entry_field1.grid(column=0, row=2)
+entry_field1.grid(column=0, row=3)
 
 entry_field2 = ttk.Entry()
-entry_field2.grid(column=0, row=4)
+entry_field2.grid(column=0, row=5)
 
 window.mainloop()

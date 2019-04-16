@@ -1,5 +1,8 @@
 """
-This application is a what if gpa calculator.The user enters their current gpa and then they fill in grade predictions in order to see the effect on gpa.
+This application is a what if gpa calculator.The user enters their current gpa and then they fill in grade predictions 
+in order to see the effect on gpa.if current gpa is not entered then the calculator will simply calculate the gpa for 
+the given term.
+
 Created by: DevSeanD
 """
 
@@ -7,7 +10,11 @@ import tkinter as tk
 from tkinter import *
 
 
-def grade_scale(n):
+def grade_scale(n):     # Works similar to a switch statement to swap strings for float values
+    if n == "A+":
+        return 4.0
+    if n == 'a+':
+        return 4.0
     if n == "A":
         return 4.0
     if n == 'a':
@@ -58,45 +65,70 @@ def grade_scale(n):
         return 0.0
 
 
-def calculate():
-    cred = float(credit_val_entry.get())
-    cred1 = float(credit_val_entry1.get())
-    cred2 = float(credit_val_entry2.get())
-    cred3 = float(credit_val_entry3.get())
-    cred4 = float(credit_val_entry4.get())
-    cred5 = float(credit_val_entry5.get())
+def calculate():     # test if the entry box is empty, if it is then it will be assigned 0
+    if len(credit_val_entry.get()) == 0: 
+        cred = 0.0
+    else:
+        cred = float(credit_val_entry.get())
 
-    total_cred = 0.0
-    total_cred = cred + cred1 + cred2 + cred3 + cred4 + cred5
+    if len(credit_val_entry1.get()) == 0:
+        cred1 = 0.0
+    else:
+        cred1 = float(credit_val_entry1.get())
 
-    grade = grade_scale(class_grade_entry.get())
+    if len(credit_val_entry2.get()) == 0:
+        cred2 = 0.0
+    else:
+        cred2 = float(credit_val_entry2.get())
+
+    if len(credit_val_entry3.get()) == 0:
+        cred3 = 0.0
+    else:
+        cred3 = float(credit_val_entry3.get())
+
+    if len(credit_val_entry4.get()) == 0:
+        cred4 = 0.0
+    else:
+        cred4 = float(credit_val_entry4.get())
+
+    if len(credit_val_entry5.get()) == 0:
+        cred5 = 0.0
+    else:
+        cred5 = float(credit_val_entry5.get())
+
+    total_cred = cred + cred1 + cred2 + cred3 + cred4 + cred5   # summing up all the credits
+
+    grade = grade_scale(class_grade_entry.get())    # calling grade scale function to assign grade points
     grade1 = grade_scale(class_grade_entry1.get())
     grade2 = grade_scale(class_grade_entry2.get())
     grade3 = grade_scale(class_grade_entry3.get())
     grade4 = grade_scale(class_grade_entry4.get())
     grade5 = grade_scale(class_grade_entry5.get())
 
-    grade_point = grade * cred
+    grade_point = grade * cred  # calculating grade points by the corresponding credit
     grade_point1 = grade1 * cred1
     grade_point2 = grade2 * cred2
     grade_point3 = grade3 * cred3
     grade_point4 = grade4 * cred4
     grade_point5 = grade5 * cred5
 
-    total_grade_points = grade_point + grade_point1 + grade_point2 + grade_point3 + grade_point4 + grade_point5
+    total_grade_points = grade_point + grade_point1 + grade_point2 + grade_point3 + grade_point4 + grade_point5 # summing up grade points
 
     new_gpa = 0.0
 
     new_gpa = total_grade_points / total_cred
 
-    current_gpa = float(curr_gpa_entry.get())
+    if len(curr_gpa_entry.get()) == 0:  # if the user does not enter a current gpa it will only calculate the new gpa
+        current_gpa = new_gpa
+    else:
+        current_gpa = float(curr_gpa_entry.get())
 
     final_gpa = (new_gpa + current_gpa) / 2
 
     final_gpa_string = str(final_gpa)
 
-    final_gpa_label = Label(text="Your new gpa is: "+final_gpa_string)
-    final_gpa_label.place(x=50, y=325)
+    final_gpa_label = Label(text="Your gpa is: " + final_gpa_string)
+    final_gpa_label.place(x=50, y=295)
 
 
 window = tk.Tk()
@@ -118,9 +150,6 @@ credit_val_label.place(x=150, y=50)
 class_grade_label = Label(text="Letter Grade")
 class_grade_label.place(x=250, y=50)
 
-data_entry_label = Label(text="If any credit or grade field is unused type \"0\"")
-data_entry_label.place(x=10, y=295)
-
 # Entry
 curr_gpa_entry = tk.Entry()
 curr_gpa_entry.place(x=120, y=10, width=50)
@@ -133,7 +162,9 @@ while x < 6:        # This loop creates 6 entry boxes for the user's class names
     x += 1
     shift += 30
 
+
 # Credit Entry
+
 credit_val_entry = tk.Entry()
 credit_val_entry.place(x=160, y=70, width=35)
 
@@ -151,6 +182,7 @@ credit_val_entry4.place(x=160, y=190, width=35)
 
 credit_val_entry5 = tk.Entry()
 credit_val_entry5.place(x=160, y=220, width=35)
+
 
 # Grade Entry
 
@@ -173,6 +205,7 @@ class_grade_entry5 = tk.Entry()
 class_grade_entry5.place(x=260, y=220, width=35)
 
 # Button
+
 calc_button = tk.Button(text="Calculate", font=("arial", 10), command=calculate)
 calc_button.place(x=125, y=260)
 

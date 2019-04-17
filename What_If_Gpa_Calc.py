@@ -1,6 +1,6 @@
 """
-This application is a what if gpa calculator.The user enters their current gpa and then they fill in grade predictions 
-in order to see the effect on gpa.if current gpa is not entered then the calculator will simply calculate the gpa for 
+This application is a what if gpa calculator.The user enters their current gpa and then they fill in grade predictions
+in order to see the effect on gpa.if current gpa is not entered then the calculator will simply calculate the gpa for
 the given term.
 
 Created by: DevSeanD
@@ -66,7 +66,7 @@ def grade_scale(n):     # Works similar to a switch statement to swap strings fo
 
 
 def calculate():     # test if the entry box is empty, if it is then it will be assigned 0
-    if len(credit_val_entry.get()) == 0: 
+    if len(credit_val_entry.get()) == 0:
         cred = 0.0
     else:
         cred = float(credit_val_entry.get())
@@ -128,7 +128,7 @@ def calculate():     # test if the entry box is empty, if it is then it will be 
     final_gpa_string = str(final_gpa)
 
     final_gpa_label = Label(text="Your gpa is: " + final_gpa_string)
-    final_gpa_label.place(x=50, y=295)
+    final_gpa_label.pack(side="bottom")
 
 
 window = tk.Tk()

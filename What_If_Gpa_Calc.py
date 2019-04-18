@@ -2,7 +2,6 @@
 This application is a what if gpa calculator.The user enters their current gpa and then they fill in grade predictions
 in order to see the effect on gpa.if current gpa is not entered then the calculator will simply calculate the gpa for
 the given term.
-
 Created by: DevSeanD
 """
 
@@ -10,7 +9,7 @@ import tkinter as tk
 from tkinter import *
 
 
-def grade_scale(n):     # Works similar to a switch statement to swap strings for float values
+def grade_scale(n):  # Works similar to a switch statement to swap strings for float values
     if n == "A+":
         return 4.0
     if n == 'a+':
@@ -65,7 +64,7 @@ def grade_scale(n):     # Works similar to a switch statement to swap strings fo
         return 0.0
 
 
-def calculate():     # test if the entry box is empty, if it is then it will be assigned 0
+def calculate():  # test if the entry box is empty, if it is then it will be assigned 0
     cred = 0.0
     if len(credit_val_entry.get()) == 0:
         cred = 0.0
@@ -120,9 +119,9 @@ def calculate():     # test if the entry box is empty, if it is then it will be 
             cred_error_label = Label(text="!You cannot enter a credit value higher than 6!")
             cred_error_label.place(x=25, y=295)
 
-    total_cred = cred + cred1 + cred2 + cred3 + cred4 + cred5   # summing up all the credits
+    total_cred = cred + cred1 + cred2 + cred3 + cred4 + cred5  # summing up all the credits
 
-    grade = grade_scale(class_grade_entry.get())    # calling grade scale function to assign grade points
+    grade = grade_scale(class_grade_entry.get())  # calling grade scale function to assign grade points
     grade1 = grade_scale(class_grade_entry1.get())
     grade2 = grade_scale(class_grade_entry2.get())
     grade3 = grade_scale(class_grade_entry3.get())
@@ -136,7 +135,7 @@ def calculate():     # test if the entry box is empty, if it is then it will be 
     grade_point4 = grade4 * cred4
     grade_point5 = grade5 * cred5
 
-    total_grade_points = grade_point + grade_point1 + grade_point2 + grade_point3 + grade_point4 + grade_point5 # summing up grade points
+    total_grade_points = grade_point + grade_point1 + grade_point2 + grade_point3 + grade_point4 + grade_point5  # summing up grade points
 
     new_gpa = 0.0
 
@@ -145,12 +144,11 @@ def calculate():     # test if the entry box is empty, if it is then it will be 
     current_gpa = 0.0
     if len(curr_gpa_entry.get()) == 0:  # if the user does not enter a current gpa it will only calculate the new gpa
         current_gpa = new_gpa
-    curr_gpa_test = float(curr_gpa_entry.get())     # current gpa value stored in test variable to be tested
-    if curr_gpa_test > 4.00:           # gpa values may not be over 4.0
-        curr_error_label = Label(text="!You cannot enter a current gpa higher than 4.0!")
-        curr_error_label.place(x=25, y=325)
-    if len(curr_gpa_entry.get()) == 1:
+    if len(curr_gpa_entry.get()) >= 1:
         current_gpa = float(curr_gpa_entry.get())
+        if current_gpa > 4.00:  # gpa values may not be over 4.0
+            curr_error_label = Label(text="!You cannot enter a current gpa higher than 4.0!")
+            curr_error_label.place(x=25, y=325)
         
     final_gpa = (new_gpa + current_gpa) / 2
 
@@ -185,12 +183,11 @@ curr_gpa_entry.place(x=120, y=10, width=50)
 
 x = 0
 shift = 0
-while x < 6:        # This loop creates 6 entry boxes for the user's class names
+while x < 6:  # This loop creates 6 entry boxes for the user's class names
     class_name_entry = tk.Entry()
-    class_name_entry.place(x=30, y=shift+70, width=70)
+    class_name_entry.place(x=30, y=shift + 70, width=70)
     x += 1
     shift += 30
-
 
 # Credit Entry
 
@@ -211,7 +208,6 @@ credit_val_entry4.place(x=160, y=190, width=35)
 
 credit_val_entry5 = tk.Entry()
 credit_val_entry5.place(x=160, y=220, width=35)
-
 
 # Grade Entry
 

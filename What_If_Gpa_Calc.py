@@ -66,35 +66,59 @@ def grade_scale(n):     # Works similar to a switch statement to swap strings fo
 
 
 def calculate():     # test if the entry box is empty, if it is then it will be assigned 0
+    cred = 0.0
     if len(credit_val_entry.get()) == 0:
         cred = 0.0
-    else:
+    if len(credit_val_entry.get()) == 1:
         cred = float(credit_val_entry.get())
+        if cred >= 7:
+            cred_error_label = Label(text="!You cannot enter a credit value higher than 6!")
+            cred_error_label.place(x=25, y=295)
 
+    cred1 = 0.0
     if len(credit_val_entry1.get()) == 0:
         cred1 = 0.0
-    else:
+    if len(credit_val_entry1.get()) == 1:
         cred1 = float(credit_val_entry1.get())
+        if cred1 >= 7:
+            cred_error_label = Label(text="!You cannot enter a credit value higher than 6!")
+            cred_error_label.place(x=25, y=295)
 
+    cred2 = 0.0
     if len(credit_val_entry2.get()) == 0:
         cred2 = 0.0
-    else:
+    if len(credit_val_entry2.get()) == 1:
         cred2 = float(credit_val_entry2.get())
+        if cred2 >= 7:
+            cred_error_label = Label(text="!You cannot enter a credit value higher than 6!")
+            cred_error_label.place(x=25, y=295)
 
+    cred3 = 0.0
     if len(credit_val_entry3.get()) == 0:
         cred3 = 0.0
-    else:
+    if len(credit_val_entry3.get()) == 1:
         cred3 = float(credit_val_entry3.get())
+        if cred3 >= 7:
+            cred_error_label = Label(text="!You cannot enter a credit value higher than 6!")
+            cred_error_label.place(x=25, y=295)
 
+    cred4 = 0.0
     if len(credit_val_entry4.get()) == 0:
         cred4 = 0.0
-    else:
+    if len(credit_val_entry4.get()) == 1:
         cred4 = float(credit_val_entry4.get())
+        if cred4 >= 7:
+            cred_error_label = Label(text="!You cannot enter a credit value higher than 6!")
+            cred_error_label.place(x=25, y=295)
 
+    cred5 = 0.0
     if len(credit_val_entry5.get()) == 0:
         cred5 = 0.0
-    else:
+    if len(credit_val_entry5.get()) == 1:
         cred5 = float(credit_val_entry5.get())
+        if cred5 >= 7:
+            cred_error_label = Label(text="!You cannot enter a credit value higher than 6!")
+            cred_error_label.place(x=25, y=295)
 
     total_cred = cred + cred1 + cred2 + cred3 + cred4 + cred5   # summing up all the credits
 
@@ -118,10 +142,14 @@ def calculate():     # test if the entry box is empty, if it is then it will be 
 
     new_gpa = total_grade_points / total_cred
 
+    current_gpa = 0.0
     if len(curr_gpa_entry.get()) == 0:  # if the user does not enter a current gpa it will only calculate the new gpa
         current_gpa = new_gpa
-    else:
+    if len(curr_gpa_entry.get()) == 1:
         current_gpa = float(curr_gpa_entry.get())
+    if current_gpa > 4.0:
+        curr_error_label = Label(text="!You cannot enter a current gpa higher than 4.0!")
+        curr_error_label.place(x=25, y=325)
 
     final_gpa = (new_gpa + current_gpa) / 2
 

@@ -145,12 +145,13 @@ def calculate():     # test if the entry box is empty, if it is then it will be 
     current_gpa = 0.0
     if len(curr_gpa_entry.get()) == 0:  # if the user does not enter a current gpa it will only calculate the new gpa
         current_gpa = new_gpa
-    if len(curr_gpa_entry.get()) == 1:
-        current_gpa = float(curr_gpa_entry.get())
-    if current_gpa > 4.0:
+    curr_gpa_test = float(curr_gpa_entry.get())     # current gpa value stored in test variable to be tested
+    if curr_gpa_test > 4.00:           # gpa values may not be over 4.0
         curr_error_label = Label(text="!You cannot enter a current gpa higher than 4.0!")
         curr_error_label.place(x=25, y=325)
-
+    if len(curr_gpa_entry.get()) == 1:
+        current_gpa = float(curr_gpa_entry.get())
+        
     final_gpa = (new_gpa + current_gpa) / 2
 
     final_gpa_string = str(final_gpa)

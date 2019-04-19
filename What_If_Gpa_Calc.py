@@ -64,60 +64,36 @@ def grade_scale(n):  # Works similar to a switch statement to swap strings for f
         return 0.0
 
 
+def credit_check(a):
+    if len(a) == 0:
+        return 0.0
+    if len(a) == 1:
+        b = float(a)
+        if b >= 7:
+            cred_error_label = Label(text="!You cannot enter a credit value higher than 6!")
+            cred_error_label.place(x=25, y=295)
+        else:
+            return float(a)
+
+
 def calculate():  # test if the entry box is empty, if it is then it will be assigned 0
     cred = 0.0
-    if len(credit_val_entry.get()) == 0:
-        cred = 0.0
-    if len(credit_val_entry.get()) == 1:
-        cred = float(credit_val_entry.get())
-        if cred >= 7:
-            cred_error_label = Label(text="!You cannot enter a credit value higher than 6!")
-            cred_error_label.place(x=25, y=295)
+    cred = credit_check(credit_val_entry.get())
 
     cred1 = 0.0
-    if len(credit_val_entry1.get()) == 0:
-        cred1 = 0.0
-    if len(credit_val_entry1.get()) == 1:
-        cred1 = float(credit_val_entry1.get())
-        if cred1 >= 7:
-            cred_error_label = Label(text="!You cannot enter a credit value higher than 6!")
-            cred_error_label.place(x=25, y=295)
+    cred1 = credit_check(credit_val_entry1.get())
 
     cred2 = 0.0
-    if len(credit_val_entry2.get()) == 0:
-        cred2 = 0.0
-    if len(credit_val_entry2.get()) == 1:
-        cred2 = float(credit_val_entry2.get())
-        if cred2 >= 7:
-            cred_error_label = Label(text="!You cannot enter a credit value higher than 6!")
-            cred_error_label.place(x=25, y=295)
+    cred2 = credit_check(credit_val_entry2.get())
 
     cred3 = 0.0
-    if len(credit_val_entry3.get()) == 0:
-        cred3 = 0.0
-    if len(credit_val_entry3.get()) == 1:
-        cred3 = float(credit_val_entry3.get())
-        if cred3 >= 7:
-            cred_error_label = Label(text="!You cannot enter a credit value higher than 6!")
-            cred_error_label.place(x=25, y=295)
+    cred3 = credit_check(credit_val_entry3.get())
 
     cred4 = 0.0
-    if len(credit_val_entry4.get()) == 0:
-        cred4 = 0.0
-    if len(credit_val_entry4.get()) == 1:
-        cred4 = float(credit_val_entry4.get())
-        if cred4 >= 7:
-            cred_error_label = Label(text="!You cannot enter a credit value higher than 6!")
-            cred_error_label.place(x=25, y=295)
+    cred4 = credit_check(credit_val_entry4.get())
 
     cred5 = 0.0
-    if len(credit_val_entry5.get()) == 0:
-        cred5 = 0.0
-    if len(credit_val_entry5.get()) == 1:
-        cred5 = float(credit_val_entry5.get())
-        if cred5 >= 7:
-            cred_error_label = Label(text="!You cannot enter a credit value higher than 6!")
-            cred_error_label.place(x=25, y=295)
+    cred5 = credit_check(credit_val_entry5.get())
 
     total_cred = cred + cred1 + cred2 + cred3 + cred4 + cred5  # summing up all the credits
 
@@ -149,7 +125,7 @@ def calculate():  # test if the entry box is empty, if it is then it will be ass
         if current_gpa > 4.00:  # gpa values may not be over 4.0
             curr_error_label = Label(text="!You cannot enter a current gpa higher than 4.0!")
             curr_error_label.place(x=25, y=325)
-        
+
     final_gpa = (new_gpa + current_gpa) / 2
 
     final_gpa_string = str(final_gpa)

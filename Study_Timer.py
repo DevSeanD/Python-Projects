@@ -15,17 +15,24 @@ window = tk.Tk()
 
 window.title("Study Timer")
 
-window.geometry("265x300")
+window.geometry("260x300")
 
 
 # Functions
 
 def study_timer():  # does time conversions
+    if len(entry_field1.get()) == 0:
+        num_hour = 0
+    else:
+        num_hour = float(entry_field1.get())
 
-    num_hour = float(entry_field1.get())
     num_hour = num_hour * 3600  # converts hours to seconds
 
-    num_min = float(entry_field2.get())
+    if len(entry_field2.get()) == 0:
+        num_min = 0
+    else:
+        num_min = float(entry_field2.get())
+        
     num_min = num_min * 60  # converts minuets to seconds
 
     total_sec = num_min + num_hour

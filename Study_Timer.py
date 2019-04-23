@@ -19,7 +19,6 @@ window.geometry("260x300")
 
 
 # Functions
-
 def study_timer():  # does time conversions
     if len(entry_field1.get()) == 0:
         num_hour = 0
@@ -28,11 +27,7 @@ def study_timer():  # does time conversions
 
     num_hour = num_hour * 3600  # converts hours to seconds
 
-    if len(entry_field2.get()) == 0:
-        num_min = 0
-    else:
-        num_min = float(entry_field2.get())
-        
+    num_min = float(entry_field2.get())
     num_min = num_min * 60  # converts minuets to seconds
 
     total_sec = num_min + num_hour
@@ -45,48 +40,45 @@ for y in range(1):  # generates one random number
 
     if quote == 1:
         label_quote1 = tk.Label(text="\"Never, never, never give up\"", bd=1, anchor=CENTER)
-        label_quote1 .grid(column=0, row=0)
+        label_quote1.pack(side="top")
 
     if quote == 2:
         label_quote2 = tk.Label(text="  \"Quality is not an act, it is a habit\"", bd=1, anchor=CENTER)
-        label_quote2.grid(column=0, row=0)
+        label_quote2.pack(side="top")
 
     if quote == 3:
         label_quote2 = tk.Label(text="  \"It always seems impossible until its done\"", bd=1, anchor=CENTER)
-        label_quote2.grid(column=0, row=0)
+        label_quote2.pack(side="top")
         window.geometry("300x300")  # higher rez because of longer text
 
     if quote == 4:
         label_quote2 = tk.Label(text="  \"Life is 10% what happens to you and 90% how you react to it\"", bd=1, anchor=CENTER)
-        label_quote2.grid(column=0, row=0)
+        label_quote2.pack(side="top")
         window.geometry("450x300")      # higher rez because of longer text
 
     if quote == 5:
         label_quote2 = tk.Label(text="  \"You cannot cross the sea by merely staring at the water\"", bd=1, anchor=CENTER)
-        label_quote2.grid(column=0, row=0)
+        label_quote2.pack(side="top")
         window.geometry("420x300") # higher rez because of longer text
 
     if quote == 6:
         label_quote2 = tk.Label(text="  \"Even if you fall on your face, you are moving forward\"", bd=1, anchor=CENTER)
-        label_quote2.grid(column=0, row=0)
+        label_quote2.pack(side="top")
         window.geometry("450x300")      # higher rez because of longer text
 
     if quote == 7:
         label_quote2 = tk.Label(text="  \"To be a good loser is to learn how to win\"", bd=1, anchor=CENTER)
-        label_quote2.grid(column=0, row=0)
+        label_quote2.pack(side="top")
         window.geometry("300x300")  # higher rez because of longer text
 
     if quote == 8:
         label_quote2 = tk.Label(text="  \"Always do your best. What you plant now, you will harvest later\"", bd=1, anchor=CENTER)
-        label_quote2.grid(column=0, row=0)
+        label_quote2.pack(side="top")
         window.geometry("450x300")      # higher rez because of longer text
 
     if quote == 9:
         label_quote2 = tk.Label(text="  \"Every day brings new choices\"", bd=1, anchor=CENTER)
-        label_quote2.grid(column=0, row=0)
-
-    label_blank = tk.Label(text=" ")
-    label_blank.grid(column=0, row=1)
+        label_quote2.pack(side="top")
 
 
 def display_timer():  # displays the ending message
@@ -103,24 +95,26 @@ def display_timer():  # displays the ending message
 
 
 # LABEL
+label_spacing = tk.Label(text=" ")
+label_spacing.pack(side="top")
+
 label_hour = tk.Label(text="How many hours?")
-label_hour.grid(column=0, row=2)
+label_hour.pack(side="top")
+
+entry_field1 = ttk.Entry()
+entry_field1.pack(side="top")
+
 
 label_min = tk.Label(text="How many minuets?")
-label_min.grid(column=0, row=4)
-
-# BUTTON
-button1 = ttk.Button(text="Start Timer", command=display_timer)
-button1.grid(column=0, row=6)
-
-label_blank = tk.Label(text="  ")
-label_blank.grid(column=0, row=7)
-
-# Entry Field
-entry_field1 = ttk.Entry()
-entry_field1.grid(column=0, row=3)
+label_min.pack(side="top")
 
 entry_field2 = ttk.Entry()
-entry_field2.grid(column=0, row=5)
+entry_field2.pack(side="top")
+
+label_spacing = tk.Label(text=" ")
+label_spacing.pack(side="top")
+# BUTTON
+button1 = ttk.Button(text="Start Timer", command=display_timer)
+button1.pack(side="top")
 
 window.mainloop()

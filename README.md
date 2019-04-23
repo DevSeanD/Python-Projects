@@ -12,7 +12,7 @@ Thank you,
  
  Semester_and_Cumulative_Gpa _Calculator.py -  simple console application that allows the user to calculate their gpa in one of two ways; Semester and Cumulative. 
  
- Study_Timer.py - A Tkinter GUI application that takes in a unit for hour and or minutes then alerts the user when that set time has passed. Also upon running a random quote is generated to motivate the user during study sessions. 
+ Study_Timer.py - A Tkinter GUI application that uses the Time library to take in a unit for hour and or minutes then alerts the user when that set time has passed. Also upon running a random quote is generated to motivate the user during study sessions. 
  
  To_Do_App.py - A TKinter GUI application that takes in a number of to do list items, and then creates Nth entry boxes and checkboxes. 
  

@@ -209,12 +209,12 @@ window = tk.Tk()
 
 window.title("Gpa Calculator")
 
-window.geometry("1080x800")
+window.geometry("1080x550")
 
 # Label
 
 # Section 1
-semester_number_label = Label(text="Semester 1")
+semester_number_label = Label(text="Semester 1", font="times 11 bold underline")
 semester_number_label.place(x=25, y=0)
 
 class_name_label = Label(text="Class Name")
@@ -227,7 +227,7 @@ class_grade_label = Label(text="Letter Grade")
 class_grade_label.place(x=250, y=20)
 
 # Section 2
-semester_number_label2 = Label(text="Semester 2")
+semester_number_label2 = Label(text="Semester 2", font="times 11 bold underline")
 semester_number_label2.place(x=375, y=0)
 
 class_name_label2 = Label(text="Class Name")
@@ -240,7 +240,7 @@ class_grade_label = Label(text="Letter Grade")
 class_grade_label.place(x=605, y=20)
 
 # Section 3
-semester_number_label2 = Label(text="Semester 3")
+semester_number_label2 = Label(text="Semester 3", font="times 11 bold underline")
 semester_number_label2.place(x=725, y=0)
 
 class_name_label2 = Label(text="Class Name")
@@ -253,7 +253,7 @@ class_grade_label = Label(text="Letter Grade")
 class_grade_label.place(x=960, y=20)
 
 # Section 4
-semester_number_label = Label(text="Semester 4")
+semester_number_label = Label(text="Semester 4", font="times 11 bold underline")
 semester_number_label.place(x=25, y=225)
 
 class_name_label = Label(text="Class Name")
@@ -266,7 +266,7 @@ class_grade_label = Label(text="Letter Grade")
 class_grade_label.place(x=250, y=245)
 
 # Section 5
-semester_number_label = Label(text="Semester 5")
+semester_number_label = Label(text="Semester 5", font="times 11 bold underline")
 semester_number_label.place(x=375, y=225)
 
 class_name_label = Label(text="Class Name")
@@ -279,7 +279,7 @@ class_grade_label = Label(text="Letter Grade")
 class_grade_label.place(x=605, y=245)
 
 # Section 6
-semester_number_label = Label(text="Semester 6")
+semester_number_label = Label(text="Semester 6", font="times 11 bold underline")
 semester_number_label.place(x=725, y=225)
 
 class_name_label = Label(text="Class Name")
@@ -290,7 +290,6 @@ credit_val_label.place(x=860, y=245)
 
 class_grade_label = Label(text="Letter Grade")
 class_grade_label.place(x=960, y=245)
-
 
 
 # Class Name Entry

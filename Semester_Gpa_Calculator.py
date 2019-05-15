@@ -128,6 +128,9 @@ window.title("Gpa Calculator")
 window.geometry("350x420")
 
 # Label
+title_label = Label(text="Semester Calculator", font="times 15 bold underline")
+title_label.pack(side="top")
+
 class_name_label = Label(text="Class Name")
 class_name_label.place(x=25, y=50)
 

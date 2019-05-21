@@ -1,5 +1,5 @@
 """
-This application is a semseter gpa caclculator using tkinter
+This application is a semseter gpa caclculator using tkinter. The user can either enter letter grades or they can enter the grade value as a float or int.
 Created by: DevSeanD
 """
 
@@ -57,6 +57,40 @@ def grade_scale(n):  # Works similar to a switch statement to swap strings for f
     if n == 'F':
         return 0.0
     if n == 'f':
+        return 0.0
+    if n == '4':
+        return 4
+    if n == '4.0':
+        return 4.0
+    if n == '3.67':
+        return 3.67
+    if n == '3.33':
+        return 3.33
+    if n == '3':
+        return 3.0
+    if n == '3.0':
+        return 3.0
+    if n == '2.67':
+        return 2.67
+    if n == '2.33':
+        return 2.33
+    if n == '2':
+        return 2.0
+    if n == '2.0':
+        return 2.33
+    if n == '2.0':
+        return 2.0
+    if n == '1.67':
+        return 1.67
+    if n == '1.33':
+        return 1.33
+    if n == '1':
+        return 1.0
+    if n == '1.0':
+        return 1.0
+    if n == '.67':
+        return .67
+    if n == '0.0':
         return 0.0
     else:
         return 0.0

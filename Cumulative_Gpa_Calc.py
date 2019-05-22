@@ -1,5 +1,5 @@
 """
-This application is a what if gpa calculator.The user enters their current gpa and then they fill in grade predictions
+This application is a what if cumulative gpa calculator.The user enters their current gpa and then they fill in grade predictions
 in order to see the effect on gpa.if current gpa is not entered then the calculator will simply calculate the gpa for
 the given term.
 Created by: DevSeanD
@@ -59,6 +59,40 @@ def grade_scale(n):  # Works similar to a switch statement to swap strings for f
     if n == 'F':
         return 0.0
     if n == 'f':
+        return 0.0
+    if n == '4':
+        return 4
+    if n == '4.0':
+        return 4.0
+    if n == '3.67':
+        return 3.67
+    if n == '3.33':
+        return 3.33
+    if n == '3':
+        return 3.0
+    if n == '3.0':
+        return 3.0
+    if n == '2.67':
+        return 2.67
+    if n == '2.33':
+        return 2.33
+    if n == '2':
+        return 2.0
+    if n == '2.0':
+        return 2.33
+    if n == '2.0':
+        return 2.0
+    if n == '1.67':
+        return 1.67
+    if n == '1.33':
+        return 1.33
+    if n == '1':
+        return 1.0
+    if n == '1.0':
+        return 1.0
+    if n == '.67':
+        return .67
+    if n == '0.0':
         return 0.0
     else:
         return 0.0
@@ -580,5 +614,3 @@ class_grade_sec6_entry5.place(x=960, y=410, width=35)
 # Button
 calc_button = tk.Button(text="Calculate", font=("arial", 10), command=calculate)
 calc_button.place(x=475, y=475)
-
-window.mainloop()

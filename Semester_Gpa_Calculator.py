@@ -92,10 +92,92 @@ def grade_scale(n):  # Works similar to a switch statement to swap strings for f
         return .67
     if n == '0.0':
         return 0.0
+    if n=='100':
+        return 4.0 
+    if n=='99':
+        return 4.0 
+    if n=='98':
+        return 4.0
+    if n=='97':
+        return 4.0
+    if n=='96':
+        return 4.0
+    if n=='95':
+        return 4.0
+    if n=='94':
+        return 4.0
+    if n=='93':
+        return 4.0
+    if n=='92':
+        return 4.0
+    if n=='91':
+        return 3.75
+    if n=='90':
+        return 3.75
+    if n=='89':
+        return 3.5
+    if n=='88':
+        return 3.5
+    if n=='87':
+        return 3.0
+    if n=='86':
+        return 3.0
+    if n=='85':
+        return 3.0
+    if n=='84':
+        return 3.0
+    if n=='83':
+        return 3.0
+    if n=='82':
+        return 3.0
+    if n=='81':
+        return 2.75
+    if n=='80':
+        return 2.75
+    if n=='79':
+        return 2.5
+    if n=='78':
+        return 2.5
+    if n=='77':
+        return 2.0
+    if n=='76':
+        return 2.0
+    if n=='75':
+        return 2.0
+    if n=='74':
+        return 2.0
+    if n=='73':
+        return 2.0
+    if n=='72':
+        return 2.0
+    if n=='71':
+        return 1.75
+    if n=='70':
+        return 1.75
+    if n=='69':
+        return 1.5
+    if n=='68':
+        return 1.5
+    if n=='67':
+        return 1.0
+    if n=='66':
+        return 1.0
+    if n=='65':
+        return 1.0
+    if n=='64':
+        return 1.0
+    if n=='63':
+        return 1.0
+    if n=='62':
+        return 1.0
+    if n=='61':
+        return .75
+    if n=='60':
+        return .75
     else:
         return 0.0
 
-
+    
 def credit_check(a):
     if len(a) == 0:
         return 0.0

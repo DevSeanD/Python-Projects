@@ -57,13 +57,13 @@ def Timer_Start():
     timer_start_3 = threading.Timer(3600.0, Fourth_Study_Sesh) # after 15 seconds function Fourth_study_sesh will run 
     timer_start_3.start()
 
-    timer_start_4 = threading.Timer(3600.0, Fifth_Study_Sesh)
+    timer_start_4 = threading.Timer(5100.0, Fifth_Study_Sesh)
     timer_start_4.start()
 
-    timer_start_5 = threading.Timer(5100.0, Sixth_Study_Sesh)
+    timer_start_5 = threading.Timer(5400.0, Sixth_Study_Sesh)
     timer_start_5.start()
 
-    timer_start_6 = threading.Timer(5400.0, Seventh_Study_Sesh)
+    timer_start_6 = threading.Timer(6900.0, Seventh_Study_Sesh)
     timer_start_6.start()
 
 # Lables
@@ -73,3 +73,5 @@ label_welcome.pack(side="top")
 #Buttons
 start_button = tk.Button(text="Start Timer", command=Timer_Start)
 start_button.pack(side="top")
+
+window.mainloop()

@@ -18,3 +18,4 @@ Thank you,
  
  What_If_Gpa_Calc.py - A Tkinter GUI application that allows the user to enter their current overall gpa and then enter the amount of credits per class and what grades they predict to earn. The application will then output the what if gpa. 
 
+  Pomodoro_Timer.py - A Tkinter GUI application that allows the user the study using the Pomodoro study techniquie. 

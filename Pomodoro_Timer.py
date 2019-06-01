@@ -43,28 +43,48 @@ def Seventh_Study_Sesh():
     label_seventh_sesh = tk.Label(text="Pomodoro Session Complete!")
     label_seventh_sesh.pack(side="top")
 
-
 def Timer_Start():
-    timer_start = threading.Timer(1500.0,First_Study_Sesh) # after 10 seconds function First_Study_Sesh will run
+    yshift = 135
+    number_seshs = 0
+
+    label_sesh_1= tk.Label(text="Session 1")
+    label_sesh_1.place(x=50,y=135)
+    check_box_1 = tk.Checkbutton()
+    check_box_1.place(x=120,y=135)
+            
+    label_seshs_2 = tk.Label(text="Session 2")
+    label_seshs_2.place(x=50,y=325)
+    check_box_2 = tk.Checkbutton()
+    check_box_2.place(x=120,y=325)
+
+    label_seshs_3 = tk.Label(text="Session 3")
+    label_seshs_3.place(x=50,y=515)
+    check_box_1 = tk.Checkbutton()
+    check_box_1.place(x=120,y=515)
+
+    timer_start = threading.Timer(00.0,First_Study_Sesh) # after 10 seconds function First_Study_Sesh will resourcewarning
     timer_start.start()
-
-    timer_start_1 = threading.Timer(1800.0, Second_Study_Sesh) # after 15 seconds function Break_Five will run
+ 
+    timer_start_1 = threading.Timer(01.0, Second_Study_Sesh) # after 15 seconds function Break_Five will resourcfff
     timer_start_1.start()
-
-    timer_start_2 = threading.Timer(3300.0, Third_Study_Sesh) # after 25 seconds function Third_study_sesh will run
+ 
+    timer_start_2 = threading.Timer(02.0, Third_Study_Sesh) # after 25 seconds function Third_study_sesh will resourcewarning
     timer_start_2.start()
-
-    timer_start_3 = threading.Timer(3600.0, Fourth_Study_Sesh) # after 15 seconds function Fourth_study_sesh will run 
+ 
+    timer_start_3 = threading.Timer(03.0, Fourth_Study_Sesh) # after 15 seconds function Fourth_study_sesh will run
     timer_start_3.start()
-
-    timer_start_4 = threading.Timer(5100.0, Fifth_Study_Sesh)
+ 
+    timer_start_4 = threading.Timer(04.0, Fifth_Study_Sesh)
     timer_start_4.start()
-
-    timer_start_5 = threading.Timer(5400.0, Sixth_Study_Sesh)
+ 
+    timer_start_5 = threading.Timer(05.0, Sixth_Study_Sesh)
     timer_start_5.start()
-
-    timer_start_6 = threading.Timer(6900.0, Seventh_Study_Sesh)
+ 
+    timer_start_6 = threading.Timer(06.0, Seventh_Study_Sesh)
     timer_start_6.start()
+            
+    label_blank_1 = tk.Label(text=" ")
+    label_blank_1.pack(side="top")
 
 # Lables
 label_welcome = tk.Label(text="Welcome to Pomodoro Timer!",bd=1)
@@ -73,5 +93,7 @@ label_welcome.pack(side="top")
 #Buttons
 start_button = tk.Button(text="Start Timer", command=Timer_Start)
 start_button.pack(side="top")
+
+
 
 window.mainloop()

@@ -11,7 +11,7 @@ import threading
 
 window = tk.Tk()
 window.title("Pomodoro Timer")
-window.geometry("500x500")
+window.geometry("650x650")
 
 counter = 0
  

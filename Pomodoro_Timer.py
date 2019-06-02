@@ -2,7 +2,6 @@
 Hello this application is designed to function as a Pomodoro timer. It consist of four 25 minute study sessions with 5 minute breaks in between. After 4 study sessions have completed there will be a 20 minute break
 Created by: DevSeanD
 """
-
 import tkinter as tk 
 import time 
 from tkinter import ttk
@@ -14,7 +13,7 @@ window.title("Pomodoro Timer")
 window.geometry("650x650")
 
 counter = 0
- 
+# setting the checkbox values to true, so when they are executed they will be checked 
 check_val_1 = tk.BooleanVar()
 check_val_1.set(True)
 
@@ -24,7 +23,7 @@ check_val_2.set(True)
 check_val_3 = tk.BooleanVar()
 check_val_3.set(True)
 
-
+# Made each section its own function for simplicity
 def First_Study_Sesh():
     label_blank = tk.Label(text=" ")
     label_blank.pack(side="top")
@@ -64,6 +63,7 @@ def Check_box_2_set():
 def Check_box_3_set():
     check_box_complete_3 = tk.Checkbutton(variable=check_val_3).place(x=120,y=490)
 
+# Main function of program containing the secquencing 
 def Timer_Start(): 
     label_sesh_1= tk.Label(text="Session 1")
     label_sesh_1.place(x=50,y=135)
@@ -74,41 +74,42 @@ def Timer_Start():
     label_seshs_3 = tk.Label(text="Session 3")
     label_seshs_3.place(x=50,y=490)
 
-    timer_start = threading.Timer(00.0,First_Study_Sesh) # after 10 seconds function First_Study_Sesh will resourcewarning
+    timer_start = threading.Timer(1500.0,First_Study_Sesh) # each interval = time(min) * 60 + previous time. In order to not overlap threading timers 
     timer_start.start()
  
-    timer_start_1 = threading.Timer(01.0, Second_Study_Sesh) # after 15 seconds function Break_Five will resourcfff
+    timer_start_1 = threading.Timer(1800.0, Second_Study_Sesh) 
     timer_start_1.start()
  
-    timer_start_2 = threading.Timer(02.0, Third_Study_Sesh) # after 25 seconds function Third_study_sesh will resourcewarning
+    timer_start_2 = threading.Timer(3300.0, Third_Study_Sesh) 
     timer_start_2.start()
  
-    timer_start_3 = threading.Timer(03.0, Fourth_Study_Sesh) # after 15 seconds function Fourth_study_sesh will run
+    timer_start_3 = threading.Timer(3600.0, Fourth_Study_Sesh) 
     timer_start_3.start()
  
-    timer_start_4 = threading.Timer(04.0, Fifth_Study_Sesh)
+    timer_start_4 = threading.Timer(5100.0, Fifth_Study_Sesh)
     timer_start_4.start()
  
-    timer_start_5 = threading.Timer(05.0, Sixth_Study_Sesh)
+    timer_start_5 = threading.Timer(5400.0, Sixth_Study_Sesh)
     timer_start_5.start()
  
-    timer_start_6 = threading.Timer(06.0, Seventh_Study_Sesh)
+    timer_start_6 = threading.Timer(6900.0, Seventh_Study_Sesh)
     timer_start_6.start()
 
     label_blank_1 = tk.Label(text=" ")
     label_blank_1.pack(side="top")
     
-    global counter
+    global counter # converting counter into a global variable then incrementing by 1
     counter += 1
     
+    # Depending on what session is completed the checkbox will correspond
     if counter == 1:
-        check_button_1 = threading.Timer(07.0, Check_box_1_set)
+        check_button_1 = threading.Timer(6900.0, Check_box_1_set)
         check_button_1.start()
     if counter == 2:
-        check_button_2 =threading.Timer(07.0, Check_box_2_set)
+        check_button_2 =threading.Timer(6900.0, Check_box_2_set)
         check_button_2.start()
     if counter == 3:
-        check_button_3 = threading.Timer(07.0,Check_box_3_set)
+        check_button_3 = threading.Timer(6900.0,Check_box_3_set)
         check_button_3.start()
 # Lables
 label_welcome = tk.Label(text="Welcome to Pomodoro Timer!",bd=1)

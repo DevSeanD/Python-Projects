@@ -1,4 +1,32 @@
+"""
+Hello, this application is a simplistic to do list made using tkinter
+Create by: DevSeanD
+"""
+
+import tkinter as tk
+import time
+import random
+from tkinter import ttk
+from tkinter import *
+
+
+def to_do():
+    item_number = item_number_entry.get() # user supplied number of items
+    item_number = int(item_number)
+    counter = 1
+    y_shift = 0  # used in order to shift the entry boxes down
+
+    while True:     # this loop will only continue when the counter is less than item_number
+        if item_number > 18:   # if item_number is greater then the loop will be broken
+            input_error_label = Label(text="Please enter any number up to 18")
+            input_error_label.place(x=30, y=110)
+            break
+
+        if counter != 0:
+            to_do_item = ttk.Entry(width=60)
             to_do_item.place(x=85, y=110 + y_shift)
+            check_box = IntVar()
+            Checkbutton(text="Done", variable=check_box).place(x=20, y=110 + y_shift)   # places check boxes in front of the entry fields
             counter += 1
             y_shift += 35
 
@@ -34,5 +62,3 @@ counter = 0
 
 
 window.mainloop()
-
-                                                                                                                              53,1          Bot

@@ -1,10 +1,9 @@
 # -*- coding: utf-8 -*-
+# GUI Temp Monitor - This project expands upon my terminal based temp monitor by introducing a gui using PYQT5
+#
+# Created by: DevSeanD
+#
 
-# Form implementation generated from reading ui file 'tempUi.ui'
-#
-# Created by: PyQt5 UI code generator 5.14.1
-#
-# WARNING! All changes made in this file will be lost!
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
@@ -24,11 +23,11 @@ def fetchCpuTemp():
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(446, 302)
+        MainWindow.resize(375, 200)
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
         self.label = QtWidgets.QLabel(self.centralwidget)
-        self.label.setGeometry(QtCore.QRect(27, 10, 401, 231))
+        self.label.setGeometry(QtCore.QRect(27, 10, 401, 160))
         self.label.setObjectName("label")
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(MainWindow)
@@ -46,7 +45,7 @@ class Ui_MainWindow(object):
         tempList = fetchCpuTemp()
         tempString = '\n'.join([str(elm) for elm in tempList])
         _translate = QtCore.QCoreApplication.translate
-        MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
+        MainWindow.setWindowTitle(_translate("MainWindow", "GUI Temp Monitor"))
         self.label.setText(_translate("MainWindow", tempString))
 
 def updateLabel():
@@ -69,4 +68,3 @@ if __name__ == "__main__":
     timer.start(3000)
 
     sys.exit(app.exec_())
-    

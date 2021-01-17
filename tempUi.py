@@ -1,3 +1,5 @@
+#!/usr/bin/python
+
 # -*- coding: utf-8 -*-
 # GUI Temp Monitor - This project expands upon my terminal based temp monitor by introducing a gui using PYQT5
 #
@@ -10,6 +12,8 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 
 import os
 from os import system
+import time
+import sys
 
 def fetchCpuTemp():
     os.system("sensors | grep Core > tempSave.txt")
@@ -54,17 +58,19 @@ def updateLabel():
     ui.label.setText(tempString)        
 
 if __name__ == "__main__":
-    import sys
-    import time
     
     app = QtWidgets.QApplication(sys.argv)
     MainWindow = QtWidgets.QMainWindow()
     ui = Ui_MainWindow()
     ui.setupUi(MainWindow)
     MainWindow.show()
-    
+   
     timer = QtCore.QTimer()
     timer.timeout.connect(updateLabel)
-    timer.start(3000)
+    
+    if(len(sys.argv) == 1):
+        timer.start(3000) 
+    if(len(sys.argv) != 1) and (str(sys.argv[1]) == "-e"):
+        timer.start(10000)
 
     sys.exit(app.exec_())

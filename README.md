@@ -22,4 +22,4 @@ Thank you,
  
  tempUi.py - A PyQT5 GUI applicationm that the "sensors" command on Linux/Mac to display Cpu temperatures to the user.
 
-  
+ DeckOfCards.py - A logical implementation of a deck of cards that allows for shuffling as well as outputing contents. Created with the intention to use as a foundation to later build card games.

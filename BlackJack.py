@@ -125,10 +125,10 @@ if(player1HandTotal > 21):
 if(player2HandTotal > 21):
     print("You Win! Your opponent busted")
 if(player1HandTotal < 21) and (player2HandTotal < 21) and (player1HandTotal > player2HandTotal):
-    print("You Win!")
+    print("You Win! Your Hand Total:", player1HandTotal, "Opponent Hand Total:", player2HandTotal)
 if(player1HandTotal == 21) and (player2HandTotal == 21):
     print("You Tied!")
 if(player1HandTotal == 21) and (player2HandTotal != 21):
-    print("You Win!")
+    print("You Win! Your Hand Total:", player1HandTotal, "Opponent Hand Total:", player2HandTotal)
 if(player1HandTotal < 21) and (player2HandTotal < 21) and (player1HandTotal < player2HandTotal):
-    print("You Lose!")
+    print("You Lose! Your Hand Total:", player1HandTotal, "Opponent Hand Total:", player2HandTotal)

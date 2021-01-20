@@ -1,3 +1,8 @@
+"""
+BlackJack.py
+DevSeanD
+1/18/2020
+"""
 import random
 import sys
 
@@ -117,6 +122,8 @@ player1.showHand()
 
 if(player1HandTotal > 21):
     print("You have busted")
+if(player2HandTotal > 21):
+    print("You Win! Your opponent busted")
 if(player1HandTotal < 21) and (player2HandTotal < 21) and (player1HandTotal > player2HandTotal):
     print("You Win!")
 if(player1HandTotal == 21) and (player2HandTotal == 21):

@@ -109,11 +109,11 @@ playerInput = input("(1) Hit (2) Stay \n")
 if(playerInput == "2"):
     print("Stay")
     if(player1HandTotal <= 21) and (player1HandTotal > player2HandTotal):
-        print("You Win!")
+        print("You Win! Your Hand Total:", player1HandTotal, "Your Opponent Hand Total:", player2HandTotal)
     if(player1HandTotal <= 21) and (player1HandTotal < player2HandTotal):
-        print("You Lose!")
+        print("You Lose! Your Hand Total:", player1HandTotal, "Your Opponent Hand Total:", player2HandTotal)
     if(player1HandTotal <= 21) and (player1HandTotal == player2HandTotal):
-        print("You Tied!")
+        print("You Tied! Your Hand Total: ", player1HandTotal, "Your Opponent Hand Total:", player2HandTotal)
     sys.exit()
 
 player1.draw(deck)

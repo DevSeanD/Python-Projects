@@ -25,3 +25,5 @@ Thank you,
  DeckOfCards.py - A logical implementation of a deck of cards that allows for shuffling as well as outputing contents. Created with the intention to use as a foundation to later build card games.
 
  BlackJack.py - A simple game of blackjack using the DeckOfCards.py file as the foundatation.
+ 
+ Bullet_Journal.py - A bullet journal that I designed in order to help me stay focused and stay on track.

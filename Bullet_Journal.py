@@ -217,7 +217,6 @@ var15 = var15[:-1]
 var16 = var16[:-1]
 var17 = var17[:-1]
 checkBoxLine = checkBoxLine[:-1]
-print(checkBoxLine)
 
 #Creating string var versions of each line for later use
 var0_string = StringVar(value=var0)

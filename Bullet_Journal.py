@@ -171,8 +171,8 @@ if os.path.exists(command_file_name):
         var16 = test_file.readline()
         var17 = test_file.readline()
         checkBoxLine = test_file.readline()
-        if checkBoxLine == "":
-            checkBoxLine = "00000000000000000"
+        if checkBoxLine == "" or checkBoxLine == "\n":
+            checkBoxLine = "00000000000000000000"
 
 else:
     with open(command_file_name,"w+") as test_file:

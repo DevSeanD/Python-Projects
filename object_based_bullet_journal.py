@@ -51,9 +51,9 @@ class InpEntry(Frame):
     """
     The list of objects made from this class will be accessible through
     class variable by typing InpEntry.EntryObjects.
-    It's useful when we want to use data common to all instances a class, for example Players
+    It's useful when we want to use data common to all instances of a class, for example Players
     The list is also 'private' to the class. It minimizes possibility of accidentally overriding it later in code
-    by private I mean it uses the namespace InpEntry. InpEntry.[thing]
+    by private I mean it uses the namespace of InpEntry, eg. InpEntry.[thing]
     just like methods with @classmethod and variables with @property decorator
     """
     EntryObjects = []
@@ -108,15 +108,14 @@ def append_entry():
     e.pack_both()
     window.update()
 
-
 for entry in list_of_entries:
     e = InpEntry(entry)
     """
-    Using common methods on lists, instead of referring to every object separately shortens the code
+    Using common methods while iterating lists, instead of referring to every object separately shortens the code
     and makes it easier to read. By a lot. There's a principle in programming called DRY(Don't repeat yourself)
-    It means that you should generally strive to minimize the amount of reoccurring code,
+    It means that you should generally strive to minimize the amount of redundant code,
     like int: player_1_score, int: player_2_score, int: player_3_score, generally by holding these in 
-    collections or objects (lists, dicts etc.) and using loops, list comprehensions
+    collections or objects (linked lists, dicts etc.) and using loops, list comprehensions
     """
 InpEntry.pack_all_entries()
 
@@ -125,3 +124,10 @@ btn_save.pack()
 
 
 window.mainloop()
+"""
+eg. txt.txt:
+General.going outside
+General.diet research
+School.prepare for exam
+011
+"""

@@ -70,7 +70,11 @@ if __name__ == "__main__":
     
     if(len(sys.argv) == 1):
         timer.start(3000) 
-    if(len(sys.argv) != 1) and (str(sys.argv[1]) == "-e"):
-        timer.start(10000)
+    if(len(sys.argv) != 1):
+        if(str(sys.argv[1]) == "-e"):
+            timer.start(10000)
+        else:
+            print("Unknown argument",sys.argv[1])
+            quit()
 
     sys.exit(app.exec_())

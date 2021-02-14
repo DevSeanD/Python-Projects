@@ -10,7 +10,7 @@ import tkinter as tk
 import random
 import sys
 import os
-from datetime import date
+from datetime import datetime
 from tkinter import *
 
 def save():    
@@ -142,8 +142,14 @@ window.title("Bullet Journal")
 
 window.geometry("625x400")
 
-#file to be read and written to
-command_file_name = sys.argv[1]
+if(len(sys.argv) == 1):
+    date = datetime.now()
+    date = str(date).split()
+    command_file_name = date[0] + ".txt"
+
+if(len(sys.argv) == 2):
+    #file to be read and written to
+    command_file_name = sys.argv[1]
 
 #Button calls the save function
 item_number_button = tk.Button(text="Save", font=("arial", 10), command=save)
@@ -194,7 +200,7 @@ else:
         var15 = ""
         var16 = ""
         var17 = ""
-        checkBoxLine = ""
+        checkBoxLine = "0000000000000000000"
         
 
 #Getting rid of extra space after content
@@ -309,7 +315,7 @@ entry_16.grid(row=21,column=1)
 entry_17 = tk.Entry(width="60",textvariable = var17_string)
 entry_17.grid(row=22,column=1)
 
-file_name_var = StringVar(value=sys.argv[1])
+file_name_var = StringVar(value=command_file_name)
 file_name_label = tk.Label(textvariable=file_name_var)
 file_name_label.grid(row=25,column=1)
 

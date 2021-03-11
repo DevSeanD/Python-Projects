@@ -139,7 +139,7 @@ window = tk.Tk()
 
 window.title("Bullet Journal")
 
-window.geometry("625x700")
+window.geometry("600x700")
 
 if(len(sys.argv) == 1):
     date = datetime.now()
@@ -151,7 +151,7 @@ if(len(sys.argv) == 2):
     command_file_name = sys.argv[1]
 
 #Button calls the save function
-item_number_button = tk.Button(text="Save", font=("arial", 20), command=save)
+item_number_button = tk.Button(text=" Save ", font=("arial", 20), command=save)
 item_number_button.grid(row=0,column=1)
 
 #Reading the input from the text file

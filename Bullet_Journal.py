@@ -150,6 +150,22 @@ if(len(sys.argv) == 2):
     #file to be read and written to
     command_file_name = sys.argv[1]
 
+if(len(sys.argv) == 3):
+    if(sys.argv[1] == "cp"):
+        date = datetime.now()
+        date = str(date).split()
+        command_file_name = date[0] + ".txt"
+        source_file = sys.argv[2]
+        with open(source_file,"r") as sr_file:
+            with open(command_file_name,"w") as dest_file:
+                 for line in sr_file:
+                    dest_file.write(line) 
+            dest_file.close()
+        sr_file.close()
+    else:
+        print("Invalid command")
+        quit()
+
 #Button calls the save function
 item_number_button = tk.Button(text=" Save ", font=("arial", 20), command=save)
 item_number_button.grid(row=0,column=1)

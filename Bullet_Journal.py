@@ -167,7 +167,7 @@ if(len(sys.argv) == 3):
         quit()
 
 #Button calls the save function
-item_number_button = tk.Button(text=" Save ", font=("arial", 20), command=save)
+item_number_button = tk.Button(text=" Save ", font=("arial", 15), command=save)
 item_number_button.grid(row=0,column=1)
 
 #Reading the input from the text file
@@ -268,67 +268,68 @@ sectionTitleLabel = tk.Label(textvariable=sectionTitle)
 sectionTitleLabel.grid(row=2,column=1)
 
 #Creating entries and setting defualt text as varX_string
-entry_0 = tk.Entry(width="60",textvariable=var0_string)
-entry_0.grid(row=3,column=1)
+large_font = ('Verdana',15)
+entry_0 = tk.Entry(width="60",textvariable=var0_string,font=large_font)
+entry_0.grid(row=3,column=1,ipady=1)
 
-entry_1 = tk.Entry(width="60",textvariable=var1_string)
-entry_1.grid(row=4,column=1)
+entry_1 = tk.Entry(width="60",textvariable=var1_string,font=large_font)
+entry_1.grid(row=4,column=1,ipady=1)
 
-entry_2 = tk.Entry(width="60",textvariable=var2_string)
-entry_2.grid(row=5,column=1)
+entry_2 = tk.Entry(width="60",textvariable=var2_string,font=large_font)
+entry_2.grid(row=5,column=1,ipady=1)
 
-entry_3 = tk.Entry(width="60",textvariable=var3_string)
-entry_3.grid(row=6,column=1)
+entry_3 = tk.Entry(width="60",textvariable=var3_string,font=large_font)
+entry_3.grid(row=6,column=1,ipady=1)
 
-entry_4 = tk.Entry(width="60",textvariable=var4_string)
-entry_4.grid(row=7,column=1)
+entry_4 = tk.Entry(width="60",textvariable=var4_string,font=large_font)
+entry_4.grid(row=7,column=1,ipady=1)
 
 sectionTitle1 = StringVar(value="School")
 sectionTitleLabel1 = tk.Label(textvariable=sectionTitle1)
 sectionTitleLabel1.grid(row=8,column=1)
 
-entry_5 = tk.Entry(width="60",textvariable=var5_string)
-entry_5.grid(row=9,column=1)
+entry_5 = tk.Entry(width="60",textvariable=var5_string,font=large_font)
+entry_5.grid(row=9,column=1,ipady=1)
 
-entry_6 = tk.Entry(width="60",textvariable=var6_string)
-entry_6.grid(row=10,column=1)
+entry_6 = tk.Entry(width="60",textvariable=var6_string,font=large_font)
+entry_6.grid(row=10,column=1,ipady=1)
 
-entry_7 = tk.Entry(width="60",textvariable=var7_string)
-entry_7.grid(row=11,column=1)
+entry_7 = tk.Entry(width="60",textvariable=var7_string,font=large_font)
+entry_7.grid(row=11,column=1,ipady=1)
 
-entry_8 = tk.Entry(width="60",textvariable=var8_string)
-entry_8.grid(row=12,column=1)
+entry_8 = tk.Entry(width="60",textvariable=var8_string,font=large_font)
+entry_8.grid(row=12,column=1,ipady=1)
 
-entry_9 = tk.Entry(width="60",textvariable=var9_string)
-entry_9.grid(row=13,column=1)
+entry_9 = tk.Entry(width="60",textvariable=var9_string,font=large_font)
+entry_9.grid(row=13,column=1,ipady=1)
 
-entry_10 = tk.Entry(width="60",textvariable = var10_string)
-entry_10.grid(row=14,column=1)
+entry_10 = tk.Entry(width="60",textvariable = var10_string,font=large_font)
+entry_10.grid(row=14,column=1,ipady=1)
 
-entry_11 = tk.Entry(width="60",textvariable = var11_string)
-entry_11.grid(row=15,column=1)
+entry_11 = tk.Entry(width="60",textvariable = var11_string,font=large_font)
+entry_11.grid(row=15,column=1,ipady=1)
 
-entry_12 = tk.Entry(width="60",textvariable = var12_string)
-entry_12.grid(row=16,column=1)
+entry_12 = tk.Entry(width="60",textvariable = var12_string,font=large_font)
+entry_12.grid(row=16,column=1,ipady=1)
 
 sectionTitle2 = StringVar(value="Self")
 sectionTitleLabel2 = tk.Label(textvariable=sectionTitle2)
 sectionTitleLabel2.grid(row=17,column=1)
 
-entry_13 = tk.Entry(width="60",textvariable = var13_string)
-entry_13.grid(row=18,column=1)
+entry_13 = tk.Entry(width="60",textvariable = var13_string,font=large_font)
+entry_13.grid(row=18,column=1,ipady=1)
 
-entry_14 = tk.Entry(width="60",textvariable = var14_string)
-entry_14.grid(row=19,column=1)
+entry_14 = tk.Entry(width="60",textvariable = var14_string,font=large_font)
+entry_14.grid(row=19,column=1,ipady=1)
 
-entry_15 = tk.Entry(width="60",textvariable = var15_string)
-entry_15.grid(row=20,column=1)
+entry_15 = tk.Entry(width="60",textvariable = var15_string,font=large_font)
+entry_15.grid(row=20,column=1,ipady=1)
 
-entry_16 = tk.Entry(width="60",textvariable = var16_string)
-entry_16.grid(row=21,column=1)
+entry_16 = tk.Entry(width="60",textvariable = var16_string,font=large_font)
+entry_16.grid(row=21,column=1,ipady=1)
 
-entry_17 = tk.Entry(width="60",textvariable = var17_string)
-entry_17.grid(row=22,column=1)
+entry_17 = tk.Entry(width="60",textvariable = var17_string,font=large_font)
+entry_17.grid(row=22,column=1,ipady=1)
 
 file_name_var = StringVar(value=command_file_name)
 file_name_label = tk.Label(textvariable=file_name_var)

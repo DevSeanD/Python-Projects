@@ -9,7 +9,6 @@
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
-
 import os
 from os import system
 import time
@@ -55,7 +54,7 @@ class Ui_MainWindow(object):
 def updateLabel():
     tempList = fetchCpuTemp()
     tempString = '\n'.join([str(elm) for elm in tempList])
-    ui.label.setStyleSheet("color: white")
+    ui.label.setStyleSheet("color: white; font-size: 25pt; font-family: Courier;")
     ui.label.setText(tempString)        
 
 if __name__ == "__main__":
@@ -65,7 +64,7 @@ if __name__ == "__main__":
     MainWindow.setStyleSheet("background-color: black")
     ui = Ui_MainWindow()
     ui.setupUi(MainWindow)
-    ui.label.setStyleSheet("color: white")
+    ui.label.setStyleSheet("color: white; font-size: 25pt; font-family: Courier;")
     MainWindow.show()
    
     timer = QtCore.QTimer()

@@ -55,14 +55,17 @@ class Ui_MainWindow(object):
 def updateLabel():
     tempList = fetchCpuTemp()
     tempString = '\n'.join([str(elm) for elm in tempList])
+    ui.label.setStyleSheet("color: white")
     ui.label.setText(tempString)        
 
 if __name__ == "__main__":
     
     app = QtWidgets.QApplication(sys.argv)
     MainWindow = QtWidgets.QMainWindow()
+    MainWindow.setStyleSheet("background-color: black")
     ui = Ui_MainWindow()
     ui.setupUi(MainWindow)
+    ui.label.setStyleSheet("color: white")
     MainWindow.show()
    
     timer = QtCore.QTimer()
@@ -70,11 +73,7 @@ if __name__ == "__main__":
     
     if(len(sys.argv) == 1):
         timer.start(3000) 
-    if(len(sys.argv) != 1):
-        if(str(sys.argv[1]) == "-e"):
-            timer.start(10000)
-        else:
-            print("Unknown argument",sys.argv[1])
-            quit()
+    if(len(sys.argv) != 1) and (str(sys.argv[1]) == "-e"):
+        timer.start(10000)
 
     sys.exit(app.exec_())

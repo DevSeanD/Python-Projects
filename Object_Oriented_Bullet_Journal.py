@@ -7,8 +7,9 @@ Issues with my old code mostly consisted of a high level of repetition which can
 import os 
 import tkinter as tk
 from tkinter import *
+from datetime import datetime
 
-window = Tk()
+window = tk.Tk()
 window.title("Bullet Journal")
 window.geometry("625x400")
 
@@ -18,7 +19,7 @@ class entry_box():
             str_val = StringVar(value="")
         else:
             str_val = StringVar(value=str_val)
-        self.entry = tk.Entry(width="60",textvariable=str_val)
+        self.entry = tk.Entry(width="80",textvariable=str_val)
         self.entry.grid(row=row_val,column=col_val)
         
 class check_box():
@@ -29,6 +30,10 @@ class check_box():
             self.check_state = IntVar(value=1)
         self.check = tk.Checkbutton(var=self.check_state)
         self.check.grid(row=row_val,column=col_val)
+    def selectCheckBox(self):
+        self.check.select()
+    def checkState(self):
+        return self.check_state.get()
 
 class label():
     def __init__(self,str_val,row_val,col_val):
@@ -38,49 +43,85 @@ class label():
 
 
 def save():
-    pass
+    entryText = []
+    for entry in range(len(entryBoxArray)): # puts all entry text into entryText array 
+        entryText.append(entryBoxArray[entry].entry.get())
+    
+    strCheck = "" # inital state of checkbox state string
+    # processing checkbox states 
+    for checkbox in range(len(checkBoxArray)):
+        if checkBoxArray[checkbox].checkState() == 1:
+            strCheck += "1"
+        else:
+            strCheck += "0"
+
+    # writing entry text to journal file
+    if os.path.exists(commandFileName):
+        with open(commandFileName, 'w') as file:
+            for entry in entryText:
+                file.write(entry + "\n")
+            # writing strCheck to jounral file
+            file.write(strCheck + "\n") 
 
 
-routineLabel = label("Routine",0,1)
-schoolLabel = label("School",6,1)
-selfLabel = label("Self",15,1)
 
-check_box_1 = check_box(1,0)
-check_box_2 = check_box(2,0,1)
-check_box_3 = check_box(3,0)
-check_box_4 = check_box(4,0)
-check_box_5 = check_box(5,0)
-check_box_6 = check_box(7,0)
-check_box_7 = check_box(8,0)
-check_box_8 = check_box(9,0)
-check_box_9 = check_box(10,0)
-check_box_10 = check_box(11,0)
-check_box_11 = check_box(12,0)
-check_box_12 = check_box(13,0)
-check_box_13 = check_box(14,0)
-check_box_14 = check_box(16,0)
-check_box_15 = check_box(17,0)
-check_box_16 = check_box(18,0)
-check_box_17 = check_box(19,0)
-check_box_18 = check_box(20,0)
- 
-entry_1 = entry_box(1,1)
-entry_2 = entry_box(2,1,"Test")
-entry_3 = entry_box(3,1)
-entry_4 = entry_box(4,1)
-entry_5 = entry_box(5,1)
-entry_6 = entry_box(7,1)
-entry_7 = entry_box(8,1)
-entry_8 = entry_box(9,1)
-entry_9 = entry_box(10,1)
-entry_10 = entry_box(11,1)
-entry_11 = entry_box(12,1)
-entry_12 = entry_box(13,1)
-entry_13 = entry_box(14,1)
-entry_14 = entry_box(16,1)
-entry_15 = entry_box(17,1)
-entry_16 = entry_box(18,1)
-entry_17 = entry_box(19,1)
-entry_18 = entry_box(20,1)
+# Entry Points
+
+# Command line argument inputs
+if(len(sys.argv) == 1):
+    date = datetime.now()
+    date = str(date).split()
+    commandFileName = date[0] + ".txt"
+
+if(len(sys.argv) == 2):
+    #file to be read and written to
+    commandFileName = sys.argv[1]
+
+if(len(sys.argv) == 3):
+    if(sys.argv[1] == "cp"):
+        date = datetime.now()
+        date = str(date).split()
+        commandFileName = date[0] + ".txt"
+        sourceFile = sys.argv[2]
+        with open(sourceFile,"r") as srFile:
+            with open(commandFileName,"w") as destFile:
+                 for line in srFile:
+                    destFile.write(line)
+            destFile.close()
+        srFile.close()
+    else:
+        print("Invalid command")
+        quit()
+
+# Button
+saveButton = tk.Button(text = " Save ",font = ("arial",15),command = save)
+saveButton.grid(row = "0",column = "1")
+
+# Labels
+routineLabel = label("Routine",1,1)
+schoolLabel = label("School",7,1)
+selfLabel = label("Self",18,1)
+
+checkBoxArray = [] # Array that holds check box objects
+spaceCount = 2 
+for check in range(22):
+    if(spaceCount == 7 or spaceCount == 18):
+        pass
+    else:
+        checkBoxArray.append(check_box(spaceCount,0))
+    spaceCount += 1
+
+checkBoxArray[2].selectCheckBox()
+
+entryBoxArray = [] # Array that holds entry box objects
+spaceCount = 2
+for entry in range(22):
+    if(spaceCount == 7 or spaceCount == 18):
+        pass
+    else:
+        entryBoxArray.append(entry_box(spaceCount,1))
+    spaceCount += 1 
+    
+commandFileName = "test.txt"
 
 window.mainloop()

@@ -29,3 +29,4 @@ Thank you,
  Bullet_Journal.py - A bullet journal that I designed in order to help me stay focused and stay on track.
   
  OO_Bullet_Jounral.py - A object oriented approach to my Bullet_Journal.py. Accepting an object oriented model cuts down on the number of lines and complexity.
+    TODO: Fix bug where all entry box objects act as one

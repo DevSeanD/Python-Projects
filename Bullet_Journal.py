@@ -264,7 +264,7 @@ blankLineLabel = tk.Label(textvariable=blankLine)
 blankLineLabel.grid(row=1,column=1)
 
 sectionTitle = StringVar(value="Routine")
-sectionTitleLabel = tk.Label(textvariable=sectionTitle)
+sectionTitleLabel = tk.Label(textvariable=sectionTitle,font=("Verdana", 20))
 sectionTitleLabel.grid(row=2,column=1)
 
 #Creating entries and setting defualt text as varX_string
@@ -285,7 +285,7 @@ entry_4 = tk.Entry(width="60",textvariable=var4_string,font=large_font)
 entry_4.grid(row=7,column=1,ipady=1)
 
 sectionTitle1 = StringVar(value="School")
-sectionTitleLabel1 = tk.Label(textvariable=sectionTitle1)
+sectionTitleLabel1 = tk.Label(textvariable=sectionTitle1,font=("Verdana", 20))
 sectionTitleLabel1.grid(row=8,column=1)
 
 entry_5 = tk.Entry(width="60",textvariable=var5_string,font=large_font)
@@ -313,7 +313,7 @@ entry_12 = tk.Entry(width="60",textvariable = var12_string,font=large_font)
 entry_12.grid(row=16,column=1,ipady=1)
 
 sectionTitle2 = StringVar(value="Self")
-sectionTitleLabel2 = tk.Label(textvariable=sectionTitle2)
+sectionTitleLabel2 = tk.Label(textvariable=sectionTitle2,font=("Verdana", 20))
 sectionTitleLabel2.grid(row=17,column=1)
 
 entry_13 = tk.Entry(width="60",textvariable = var13_string,font=large_font)
@@ -332,7 +332,7 @@ entry_17 = tk.Entry(width="60",textvariable = var17_string,font=large_font)
 entry_17.grid(row=22,column=1,ipady=1)
 
 file_name_var = StringVar(value=command_file_name)
-file_name_label = tk.Label(textvariable=file_name_var)
+file_name_label = tk.Label(textvariable=file_name_var,font=("Verdana", 20))
 file_name_label.grid(row=25,column=1)
 
 
